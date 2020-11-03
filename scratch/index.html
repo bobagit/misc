@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+</head>
+
+<style>
+
+body {
+	font-family: Helvetica;
+	font-size: 12px;
+	display: flex;
+}
+
+ul {
+	justify-content: center;
+	list-style: none;
+}
+
+li {
+	padding: .2em 0;
+}
+
+.highlight {
+	background-color: lightyellow;
+	border: 1px dotted red;
+	margin: 1em 5em;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+</style>
+
+<ul id="results">
+</ul>
+
+<body>
+
+<script>
+
+const userInput = parseInt(prompt("Enter number to stop at: "))
+
+let results = document.getElementById("results")
+
+for (let i = 1; i <= userInput; i++) {
+	if (i % 3 === 0 && i % 5 == 0) {
+		let entry = document.createElement('li');
+		entry.className = "highlight";
+		entry.appendChild(document.createTextNode("FizzBuzz"));
+		results.appendChild(entry);
+	} else if (i % 3 == 0)  {
+		let entry = document.createElement('li');
+		entry.appendChild(document.createTextNode("Fizz"));
+		results.appendChild(entry);
+	} else if (i % 5 == 0)  {
+		let entry = document.createElement('li');
+		entry.appendChild(document.createTextNode("Buzz"));
+		results.appendChild(entry);
+	} else {
+		let entry = document.createElement('li');
+		entry.appendChild(document.createTextNode(i));
+		results.appendChild(entry)
+	}
+}
+
+</script>
+</body>
+</html>
