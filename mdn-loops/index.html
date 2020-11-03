@@ -36,7 +36,7 @@ const guestList = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Ka
 const banned = ['Phil', 'Lola']
 
 // Remote banned names from guest list using filter()
-let admitted = guestList.filter(e => !banned.includes(e))
+let admitted = (guestList.filter(e => !banned.includes(e))).sort().reverse()
 
 const admittedDiv = document.getElementById('admitted')
 const refusedDiv = document.getElementById('refused')
