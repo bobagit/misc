@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entrance</title>
+</head>
+<body>
+
+<style>
+
+	body {
+		font-family: Arial, Helvetica, sanserif;
+	}
+	ul {
+		list-style: none
+	}
+	.header {
+		font-weight: 700;	
+	}
+</style>
+
+<ul id="admitted">
+	<li class="header">Admit:</li>
+</ul>
+
+<ul id="refused">
+	<li class="header">Refused:</li>
+</ul>
+
+
+</body>
+</html>
+
+<script>
+
+const guestList = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+const banned = ['Phil', 'Lola']
+
+// Remote banned names from guest list using filter()
+let admitted = guestList.filter(e => !banned.includes(e))
+
+const admittedDiv = document.getElementById('admitted')
+const refusedDiv = document.getElementById('refused')
+
+for (let i = admitted.length - 1; i >= 0; i--) {
+	let listItem = document.createElement('li')
+	listItem.appendChild(document.createTextNode(admitted[i]));
+	admittedDiv.appendChild(listItem);
+}
+
+for (var i = banned.length - 1; i >= 0; i--) {
+	let listItem = document.createElement('li')
+	listItem.appendChild(document.createTextNode(banned[i]));
+	refusedDiv.appendChild(listItem);
+}
+
+</script>
