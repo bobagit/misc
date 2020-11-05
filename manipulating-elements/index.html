@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conversion</title>
+</head>
+<body>
+
+<div id="convert">
+
+<p>Convert F to C:</p>
+<form id="form">
+<input name="tempValue" type="text" id="tempValue">
+<button onclick="myFunction(document.getElementById('tempValue').value)" type="button">Convert</button>
+
+</form>
+
+<p id="answer"></p>
+
+</div>
+
+
+<script>
+const ftoc = function(fah) {
+  return Math.round(((fah - 32) * 5/9) * 10) / 10
+}
+
+const ctof = function(cel) {
+  return Math.round(((cel * 9/5 + 32)) * 10) / 10
+}
+
+function myFunction(value) {
+	let populate = ftoc(value);
+	document.getElementById("answer").innerHTML = populate; 	
+}
+
+</script>
+</body>
+</html>

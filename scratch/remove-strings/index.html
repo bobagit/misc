@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Removal</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+const removeFromArray = function(arrayObject, ...args) {
+  let first = arrayObject
+  let second = args
+  return first.filter(e => !second.includes(e))   
+}
+
+console.log(removeFromArray([1, 2, 3, 4, "yes", "no"], "yes", 4))
+
+
+</script>
+
+</body>
+</html>
